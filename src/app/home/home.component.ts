@@ -1,6 +1,5 @@
 import { SampleService } from './../sample.service';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { Product } from '../product';
 import { MatDialog } from '@angular/material/dialog';
 

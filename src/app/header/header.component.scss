@@ -1,0 +1,41 @@
+.nav-tabs{
+    float: right;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    border: none;
+    .nav-link {
+        color: #fff;
+
+    
+
+    }
+    .active{
+        background-color:transparent!important;
+        color: #fff;
+        border: transparent;
+        font-weight: bold;
+    }
+}
+.header-wrapper{
+    background: #008000b3;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    .title {
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+.logo {
+    float: left;
+    margin-left: 10px;
+display: flex;
+align-items: center;
+flex-direction: row;
+    img {
+        width: 50px;
+        margin-right: 10px;
+    }
+}
