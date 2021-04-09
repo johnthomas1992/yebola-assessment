@@ -5,4 +5,6 @@ export interface Product {
   p_availability: number;
   p_details: string;
   p_category: string;
+  p_quantity?: number;
+
 }

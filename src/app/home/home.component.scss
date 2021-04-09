@@ -1,0 +1,34 @@
+.product {
+    .product-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .product-name {
+        font-weight: bold;
+        margin: 4px;
+    }
+    .product-item {
+        float: left;
+        margin: 10px;
+        min-width: 100px;
+    }
+    .product-quantity {
+        margin: 10px auto;
+        input {
+            width: 50px;
+            margin-left: 15px;
+        }
+        button {
+            background: #ababd2;
+            color: #fff;
+        }
+    }
+    .mat-card {
+        height: 350px;
+    }
+}

@@ -1,5 +1,34 @@
-<div *ngFor="let product of productsArr">
-    <div class="">
-        <mat-card>{{product.p_name}}</mat-card>
+<mat-form-field appearance="fill">
+    <mat-label>Select Category</mat-label>
+    <mat-select (selectionChange)="categorySelected()" [(ngModel)]="selectedCategory">
+        <mat-option *ngFor="let product of productCategoryArr" [value]="product">
+            {{product}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<div class="product">
+    <div class="product-item" *ngFor="let product of productsArr; let i =index">
+
+        <mat-card>
+            <div class="product-wrapper">
+                <img src="../../assets/images/{{product.p_name}}.jpeg">
+                <div class="product-name">{{product.p_name}}</div>
+                <div class="product-availbility"> <label>Availablity: </label>{{product.p_availability}}</div>
+                <div class="product-price"><label>Price: </label>{{product.p_cost}} Rs</div>
+                <div class="product-details"><label>Details: </label>{{product.p_details}}</div>
+                <div class="product-quantity">
+                    <label>Quantity: </label>
+                    <input type="number" [(ngModel)]="product.p_quantity">
+                </div>
+                <div class="product-quantity">
+                    <button mat-button (click)="addQuantity(i)">Submit</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+
 </div>
-</div>
+<ng-template #jsonResponse>
+    {{jsonOutput}}
+</ng-template>

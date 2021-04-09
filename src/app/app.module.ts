@@ -9,7 +9,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,10 @@ import {MatCardModule} from '@angular/material/card';
     NgbModule,
     HttpClientModule,
     FormsModule,
-    MatCardModule
+    MatButtonModule,
+    MatCardModule,
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
