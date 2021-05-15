@@ -44,10 +44,6 @@ export class HomeComponent implements OnInit {
   }
   addQuantity(index: number): void{
     this.jsonOutput = JSON.stringify(this.productsArr[index]);
-    const dialogRef = this.dialog.open(this.jsonResponse);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(this.jsonResponse);
   }
 }

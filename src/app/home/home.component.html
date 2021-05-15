@@ -1,50 +1,52 @@
-
 <app-home-carousel></app-home-carousel>
 <div class="home-wrapper">
-<div class="">
-    <mat-label>Shop By Category</mat-label>
-    <mat-form-field appearance="fill">
-        <mat-select (selectionChange)="categorySelected()" [(ngModel)]="selectedCategory">
-            <mat-option *ngFor="let product of productCategoryArr" [value]="product">
-                {{product}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-</div>
-
-<div class="product">
-    <div class="product-item" *ngFor="let product of productsArr; let i =index">
-
-        <mat-card>
-            
-            <div class="product-wrapper">
-                <div class="mx-auto">
-                    <img [ngClass]="{'opacity':product.p_availability == 0}" src="../../assets/images/{{product.p_name}}.jpeg"></div>
-                <div class="product-name">{{product.p_name}}</div>
-                <div *ngIf="product.p_availability == 0" class="out-of-stock">Out of Stock</div>
-                <div *ngIf="product.p_availability >= 1">
-                <div class="product-price">
-                    <span>&#8377;</span> {{product.p_cost}} </div>
-                <div class="product-details"><label> </label>{{product.p_details}}</div>
-                <div class="product-quantity">
-                    
-                   
-                    <label>Qty: </label>
-                    <input type="number" [(ngModel)]="product.p_quantity">
-                    <button mat-button (click)="addQuantity(i)">ADD
-                        <mat-icon >
-                            shopping_basket
-                            </mat-icon>
-                    </button>
-                  
-                </div>
-                </div>
-            </div>
-        </mat-card>
+    <div class="">
+        <mat-label>Shop By Category</mat-label>
+        <mat-form-field appearance="fill">
+            <mat-select (selectionChange)="categorySelected()" [(ngModel)]="selectedCategory">
+                <mat-option *ngFor="let product of productCategoryArr" [value]="product">
+                    {{product}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
 
-</div>
-<ng-template #jsonResponse>
-    {{jsonOutput}}
-</ng-template>
+    <div class="product">
+        <div class="product-item" *ngFor="let product of productsArr; let i =index">
+
+            <mat-card>
+
+                <div class="product-wrapper">
+                    <div class="mx-auto">
+                        <img [ngClass]="{'opacity':product.p_availability == 0}"
+                            src="../../assets/images/{{product.p_name}}.jpeg">
+                    </div>
+                    <div class="product-name">{{product.p_name}}</div>
+                    <div *ngIf="product.p_availability == 0" class="out-of-stock">Out of Stock</div>
+                    <div *ngIf="product.p_availability >= 1">
+                        <div class="product-price">
+                            <span>&#8377;</span> {{product.p_cost}}
+                        </div>
+                        <div class="product-details"><label> </label>{{product.p_details}}</div>
+                        <div class="product-quantity">
+
+
+                            <label>Qty: </label>
+                            <input type="number" [(ngModel)]="product.p_quantity">
+                            <button mat-button (click)="addQuantity(i)">ADD
+                                <mat-icon>
+                                    shopping_basket
+                                </mat-icon>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+
+    </div>
+    <ng-template #jsonResponse>
+        {{jsonOutput}}
+    </ng-template>
 </div>
